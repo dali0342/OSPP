@@ -1,29 +1,15 @@
 
 #ifndef __ADDRESS_BOOK_H__
 #define __ADDRESS_BOOK_H__
-/* TODO: Add your structures here */ 
 
-struct Person
-{
-    char *name;
-    int age;
-    char *telenum;
-};
-
-
-struct Address_book
-{
-    char *[Person];
-    int size;
-};
-
-
-
+typedef struct Address_book address_book_t;
+typedef struct Person person_t;
 /* Function declarations. Do not modify! Implement those functions in address_book.c */
-void print_person(const Person *person);
-void print_address_book(const Address_book *address_book);
+void print_person(const person_t *person);
+void print_address_book(const address_book_t *address_book);
 
-Address_book *create_address_book(void);
-void destroy_address_book(Address_book *address_book);
+address_book_t *create_address_book(void);
+void destroy_address_book(address_book_t *address_book);
+person_t *make_person();
 
 #endif /* __ADDRESS_BOOK_H__ */
