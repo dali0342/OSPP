@@ -244,9 +244,10 @@ todo_1:
         # Otherwise the same instruction would be executed again causing the same 
         # exception again.
         
-        # addi $k0, $k0, 4 # TODO: Uncomment this instruction      
+        addi $k0, $k0, 4 # TODO: Uncomment this instruction      
        
         # Update EPC in coprocessor 0.
+        addi $14, $14, 4 
         
         mtc0 $k0, $14
         

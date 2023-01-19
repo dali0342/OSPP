@@ -36,9 +36,9 @@ void print_address_book(const address_book_t *address_book){
 }*/
 
 static void make_space_person(person_t *person){
-    person->name = calloc (1, 50);
-    person->age = calloc (1, 50);
-    person->phone_number = calloc (1, 50);
+    person->name = calloc (1, 500);
+    person->age = calloc (1, 500);
+    person->phone_number = calloc (1, 500);
     return;
 }
 
@@ -46,24 +46,24 @@ person_t *make_person(){
     person_t *person = calloc (1, sizeof (person_t));
     make_space_person(person);
     printf("\nName: ");
-    fgets(person->name, sizeof(person->name), stdin);
+    fgets(person->name, 5000, stdin);
     printf("\nAge: ");
-    fgets(person->age, sizeof(person->age), stdin);
+    fgets(person->age, 5000, stdin);
     printf("\nPhone number: ");
-    fgets(person->phone_number, sizeof(person->phone_number), stdin);
+    fgets(person->phone_number, 5000, stdin);
     return person;
 }
 
 address_book_t *create_address_book(void){
-    address_book_t ab = calloc (1, sizeof address_book_t);
+  /*address_book_t ab = calloc (1, sizeof address_book_t);
     int *size;
     scanf("%d", size);
     ab->size = size;
     for(int i = 0; i < ab->size; i++){
         ab->person_info[i] = make_person();
-    }
+    }*/
 
-    return ab;
+    return NULL;
 }
 
 void destroy_address_book(address_book_t *address_book){
